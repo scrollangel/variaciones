@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+  </head>
+  <body{{ attributes }}>
+    <header class="site-header">
+      <div class="site-branding">
+        <a href="/">
+          <img 
+          src="/themes/custom/gallery/assets/images/logo.png" 
+          alt="Variaciones Logo"
+          />
+        </a>
+      </div>
+    </header>
+
+    <div class="site-content">
+      {{ page }}
+    </div>
+
+    <footer class="site-footer">
+      <div id="yellow-line"></div>
+      <div id="red-line"></div>
+    </footer>
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>
+

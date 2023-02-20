@@ -1,0 +1,36 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: var(--header-height);
+  z-index: 10;
+  background-color: rgb(var(--main-bg-color));
+}
+
+.site-branding {
+  --padding: 1rem;
+  height: calc(var(--header-height) - var(--padding) * 2);
+  margin: var(--padding) auto;
+  grid-column: 1;
+  max-width: 206px;
+}
+
+.site-branding img {
+  height: 100%;
+}
+
+.site-content {
+  min-height: 100vh;
+  background-color: rgb(var(--main-bg-color));
+  padding-top: var(--header-height);
+}
+
+.site-footer {
+  height: 300px;
+  z-index: 10;
+  background-color: rgb(23, 23, 23);
+}
+
+
+
