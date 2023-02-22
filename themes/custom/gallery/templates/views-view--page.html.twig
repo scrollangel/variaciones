@@ -1,0 +1,9 @@
+{{ attach_library('gallery/views-styling') }}
+
+<div class="view-content">
+  {% for row in rows %}
+    {% for item in row["#rows"] %}
+      {{ item }}
+    {% endfor %}
+  {% endfor %}
+</div>

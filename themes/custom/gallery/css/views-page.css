@@ -1,0 +1,33 @@
+.page-content {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.view-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.view-content .views-field {
+  margin: 0;
+  padding: 1rem;
+  width: 100%;
+}
+
+.view-content .views-field:nth-child(odd) {
+  background-color: rgba(var(--branding-main-color), 0.75);
+}
+
+.view-content .views-field:nth-child(even) {
+  background-color: rgba(var(--branding-secondary-color), 0.75);
+}
+
+.view-content .views-field .field-content {
+  font-size: 2rem;
+  font-weight: 700;
+}

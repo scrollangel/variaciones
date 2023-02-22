@@ -4,6 +4,8 @@
   --main-bg-color: 26, 26, 26;
   --main-text-color: 234, 234, 234;
   --header-height: 100px;
+  --branding-main-color: 112, 36, 161;
+  --branding-secondary-color: 43, 89, 166;
 }
 
 * {
@@ -17,8 +19,8 @@ html {
 }
 
 body {
-  background: var(--main-bg-color);
-  color: var(--main-text-color);
+  background: rgb(var(--main-bg-color));
+  color: rgb(var(--main-text-color));
   font-family: "Work Sans", sans-serif;
 }
 
@@ -31,7 +33,10 @@ h3,
 h4,
 h5,
 h6,
-a {
+a,
+ul,
+ol,
+li {
   color: rgb(var(--main-text-color));
 }
 
@@ -45,11 +50,14 @@ h1 {
 }
 
 h2 {
-  font-size: 5rem;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
 }
 
 h3 {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  line-height: 2rem;
+  margin-top: 1rem;
 }
 
 small {
@@ -60,3 +68,10 @@ li {
   list-style: none;
 }
 
+button {
+  background: none;
+  cursor: pointer;
+  border: none;
+  color: rgb(var(--main-text-color));
+  font-size: 1.5rem;
+}

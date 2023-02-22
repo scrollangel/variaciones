@@ -12,3 +12,8 @@ front-styling:
   css:
     theme:
       css/front.css: {}
+        
+views-styling:
+  css:
+    theme:
+      css/views-page.css: {}

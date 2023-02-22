@@ -1,32 +1,94 @@
+{% set items = simplify_menu('main') %}
+
 <!DOCTYPE html>
-<html{{ html_attributes }}>
+<html{{html_attributes}}>
   <head>
     <head-placeholder token="{{ placeholder_token }}">
-    <title>{{ head_title|safe_join(' | ') }}</title>
-    <css-placeholder token="{{ placeholder_token }}">
-    <js-placeholder token="{{ placeholder_token }}">
-  </head>
-  <body{{ attributes }}>
-    <header class="site-header">
-      <div class="site-branding">
-        <a href="/">
-          <img 
-          src="/themes/custom/gallery/assets/images/logo.png" 
-          alt="Variaciones Logo"
-          />
-        </a>
+      <title>{{ head_title|safe_join(' | ') }}</title>
+      <css-placeholder token="{{ placeholder_token }}">
+        <js-placeholder token="{{ placeholder_token }}"></head>
+    <body{{attributes}}>
+      <header class="site-header">
+        <div class="site-branding">
+          <a href="/">
+            <img 
+            src="/themes/custom/gallery/assets/images/logo.png" 
+            alt="Variaciones Logo"
+            />
+          </a>
+        </div>
+        <nav id="site-navigation" class="main-navigation">
+          <button 
+            class="menu-toggle" 
+            aria-controls="primary-menu" 
+            aria-expanded="false" 
+            onclick="toggleMenu()"
+            >
+            <i class="fa-sharp fa-solid fa-bars"></i>
+          </button>
+          <div class="menu-container">
+            <button 
+              class="menu-toggle close" 
+              aria-controls="primary-menu" 
+              aria-expanded="true" 
+              onclick="toggleMenu()"
+              >
+              <i class="fa-sharp fa-solid fa-xmark"></i>  
+            </button>
+            <div class="site-branding menu-site-branding">
+              <a href="/">
+                <img 
+                src="/themes/custom/gallery/assets/images/logo_blanco.png" 
+                alt="Variaciones Logo"
+                />
+              </a>
+            </div>
+            <a
+              target="_blank"
+              href="http://ritaportal.udistrital.edu.co:10439/index.php/variaciones"
+            >
+              Revista
+            </a>
+            <ul>
+              {% for menu_item in items.menu_tree %}
+              <li class="navigation__item">
+                <a href="{{ menu_item.url }}">{{ menu_item.text }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <div class="site-content">
+        {{ page }}
       </div>
-    </header>
 
-    <div class="site-content">
-      {{ page }}
-    </div>
-
-    <footer class="site-footer">
-      <div id="yellow-line"></div>
-      <div id="red-line"></div>
-    </footer>
-    <js-bottom-placeholder token="{{ placeholder_token }}">
-  </body>
+      <footer class="site-footer">
+        <img src="/themes/custom/gallery/assets/images/logo_ud_blanco.png" alt="Logo Universidad Distrital Francisco José de Caldas"/>
+        <div class="footer-division-line"></div>
+        <ul>
+          <li>Universidad Distrital Francisco José de Caldas</li>
+          <li>NIT. 899.999.230.7</li>
+          <li>Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional</li>
+          <li>Acuerdo de creación N° 10 de 1948 del Concejo de Bogotá</li>
+          <li>Acreditación Institucional de Alta Calidad - Resolución N° 23096 del 15 de diciembre del 2016</li>
+        </ul>
+        <div class="social-footer">
+          <a target="_blank" href="https://twitter.com/RVariaciones">
+            <i class="fab fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a target="_blank" href="https://www.instagram.com/revistavariaciones/?hl=es-la">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/Revista-Variaciones-110301151394291">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a target="_blank" href="https://www.youtube.com/channel/UCbgBJsBOHyezqY6cOcFnFww">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+          </a>
+        </div>
+      </footer>
+      <js-bottom-placeholder token="{{ placeholder_token }}">
+    </body>
 </html>
-
