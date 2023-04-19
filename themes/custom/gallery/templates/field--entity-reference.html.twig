@@ -1,4 +1,8 @@
-<h3>{{ label }}</h3>
+{% if label_hidden %}
+{% else %}
+  <h3{{ title_attributes }}>{{ label }}</h3>
+{% endif %}
+
 <ul class="content-list">
   {% for item in items %}
     <li>{{ item.content }}</li>

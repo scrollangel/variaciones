@@ -3,9 +3,12 @@
     <video autoplay muted loop class="site-header-video">
       <source src="/themes/custom/gallery/assets/videos/danza_web.mp4" type="video/mp4">
     </video>
-    <h2 class="page-title">{{ page.header.gallery_page_title|render|striptags|trim}}</h2>
+    <div id="page-title-wrapper">
+      {{ page.header }}
+    </div>
   </div>
   <main class="page-content">
+    {{ page.breadcrumb }}
     {{ page.content }}
   </main>
 </div>

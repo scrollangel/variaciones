@@ -7,55 +7,61 @@
       <title>{{ head_title|safe_join(' | ') }}</title>
       <css-placeholder token="{{ placeholder_token }}">
         <js-placeholder token="{{ placeholder_token }}"></head>
-    <body{{attributes}}>
+    <body {{attributes}}>
       <header class="site-header">
-        <div class="site-branding">
+        <div class="site-branding main-site-branding">
           <a href="/">
-            <img 
-            src="/themes/custom/gallery/assets/images/logo.png" 
+            <img
+            src="/themes/custom/gallery/assets/images/logo.png"
             alt="Variaciones Logo"
             />
           </a>
         </div>
         <nav id="site-navigation" class="main-navigation">
-          <button 
-            class="menu-toggle" 
-            aria-controls="primary-menu" 
-            aria-expanded="false" 
+          <button
+            class="menu-toggle"
+            aria-controls="primary-menu"
+            aria-expanded="false"
             onclick="toggleMenu()"
             >
             <i class="fa-sharp fa-solid fa-bars"></i>
           </button>
           <div class="menu-container">
-            <button 
-              class="menu-toggle close" 
-              aria-controls="primary-menu" 
-              aria-expanded="true" 
+            <button
+              class="menu-toggle close"
+              aria-controls="primary-menu"
+              aria-expanded="true"
               onclick="toggleMenu()"
               >
-              <i class="fa-sharp fa-solid fa-xmark"></i>  
+              <i class="fa-sharp fa-solid fa-xmark"></i>
             </button>
             <div class="site-branding menu-site-branding">
               <a href="/">
-                <img 
-                src="/themes/custom/gallery/assets/images/logo_blanco.png" 
+                <img
+                src="/themes/custom/gallery/assets/images/logo_blanco.png"
                 alt="Variaciones Logo"
                 />
               </a>
             </div>
-            <a
-              target="_blank"
-              href="http://ritaportal.udistrital.edu.co:10439/index.php/variaciones"
-            >
-              Revista
-            </a>
-            <ul>
-              {% for menu_item in items.menu_tree %}
-              <li class="navigation__item">
-                <a href="{{ menu_item.url }}">{{ menu_item.text }}</a>
-              </li>
-              {% endfor %}
-            </ul>
+            <div class="menu-content">
+              <ul class="menu-navigation">
+                {% for menu_item in items.menu_tree %}
+                <li class="navigation-item">
+                  <a href="{{ menu_item.url }}">{{ menu_item.text }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+              <a
+                target="_blank"
+                href="http://ritaportal.udistrital.edu.co:10439/index.php/variaciones/index"
+                class="main-link"
+                >
+                Ver la revista
+              </a>
+            </div>
+            <footer class="navigation-footer">
+              <img src="/themes/custom/gallery/assets/images/logo_ud_blanco.png" alt="Logo Universidad Distrital Francisco José de Caldas"/>
+            </footer>
           </div>
         </nav>
       </header>

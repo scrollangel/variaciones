@@ -17,10 +17,31 @@
   bottom: 0;
   right: 0;
   background-color: rgba(var(--main-bg-color), 0.5);
-  text-align: center;
   width: 75%;
   min-width: 300px;
   padding: 2rem;
   text-align: left;
 }
 
+@media (max-width: 550px) {
+  .hero > .resume {
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 850px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .hero > .resume {
+    width: 100%;
+  }
+
+  .resume-title-wrapper {
+    max-height: 8rem;
+  }
+}
